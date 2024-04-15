@@ -1,18 +1,34 @@
 class TreeNode:
  def __init__(self,data):
-  
   self.data = data
   self.left =None
   self.right=None
 
-root = TreeNode(10)
-root.left = TreeNode(40)
-left__child__data = root.left.data
-print( left__child__data)
-root=TreeNode(30)
-root.right=TreeNode(50)
-right__child__data =root.right.data
-print(right__child__data)
+def inorderTraversal(root):
+    if root:
+      
+     inorderTraversal(root.left)
+     print(root.data)
+     inorderTraversal(root.right)
+
+root = TreeNode(12)
+root.left = TreeNode(5)
+root.right= TreeNode(13)
+root.left.left = TreeNode(1)
+root.left.right = TreeNode(4)
+root.right.left = TreeNode(6)
+root.right.right = TreeNode(11)
+  
+
+print("inorderTraversal:")
+inorderTraversal(root)
+
+
+
+
+
+
+
 
 
 
